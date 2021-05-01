@@ -103,7 +103,8 @@ export default class HelloWorld {
 					},
 					transform: {
 						local: {
-							position: { x: 0.0, y: 0.2, z: 0.0 }
+							position: { x: 0.0, y: 0.2, z: 0.0 },
+							scale: { x: 0.75, y: 0.75, z: 0.75 }
 						}
 					}
 				}
