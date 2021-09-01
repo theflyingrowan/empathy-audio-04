@@ -33,7 +33,7 @@ export default class HelloWorld {
 
 	constructor(private context: MRE.Context) {
 		this.context.onStarted(() => this.started());
-		this.context.onUserJoined((user) => this.userJoined(user));
+		//this.context.onUserJoined((user) => this.userJoined(user));
 
 		/*
 		 * Set up a userLeft() callback
@@ -74,7 +74,10 @@ export default class HelloWorld {
 		// spawn a copy of a kit item
 		this.kitItem = MRE.Actor.CreateFromLibrary(this.context, {
 			// the number below is the item's artifact id.
-			resourceId: 'artifact:1725170080645382585'
+			resourceId: 'artifact:1812871477200945748',
+			actor: {
+				appearance: { enabled: false }
+			}
 		});
 
 		//==========================
@@ -86,7 +89,7 @@ export default class HelloWorld {
 	/**
 	 * When a user joins, attach something to them.
 	 */
-	private userJoined(user: MRE.User) {
+	/*private userJoined(user: MRE.User) {
 		// print the user's name to the console
 		console.log(`${user.name} joined`);
 
@@ -103,8 +106,10 @@ export default class HelloWorld {
 					},
 					transform: {
 						local: {
-							position: { x: 0.0, y: 0.2, z: 0.0 },
-							scale: { x: 0.75, y: 0.75, z: 0.75 }
+							position: { x: 0.0, y: 0.2, z: 0.0 }
+						},
+						global: {
+							scale: { x: 0.4, y: 0.4, z: 0.4 }
 						}
 					}
 				}
@@ -118,7 +123,7 @@ export default class HelloWorld {
 		// Let 'syncfix' know a user has joined.
 		//==========================
 		this.syncfix.userJoined();
-	}
+	}*/
 
 	/*
 	 * When a user leaves, remove the attachment (if any) and destroy it

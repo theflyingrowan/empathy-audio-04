@@ -27,6 +27,7 @@ function runApp() {
 
 	// Handle new application sessions
 	server.adapter.onConnection(context => new App(context));
+	// from ex: server.adapter.onConnection((context, params) => new App(context, params, server.baseUrl));
 }
 
 // Check whether code is running in a debuggable watched filesystem
